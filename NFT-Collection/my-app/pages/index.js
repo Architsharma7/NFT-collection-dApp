@@ -174,7 +174,7 @@ export default function Home() {
 
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await web3ModalRef.current.connect();
-    const web3Provider = new providers.Web3Provider(provider);
+    const web3Provider = new ethers.providers.Web3Provider(web3.currentProvider);
 
     // If user is not connected to the Rinkeby network, let them know and throw an error
 
